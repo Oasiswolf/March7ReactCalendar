@@ -74,7 +74,7 @@ def add_month():
 
     new_record = Month(name, year, start_day, days_in_month, days_in_previous_month)
     db.session.add(new_record)
-    db.commit()
+    db.session.commit()
 
     return jsonify(month_schema.dump(new_record))
 
